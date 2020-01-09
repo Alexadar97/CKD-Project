@@ -1,0 +1,385 @@
+<div class="container-fluid card">
+  <div class="col-md-10">
+    <div class="quality-bg">
+      <div class="row">
+        <div class="col-md-10">
+          <h2 class="head">New Request</h2>
+        </div>
+        <div class="col-md-2" style="text-align: end;">
+          <button id="back-btn" class="button-text" (click)="back1()" *ngIf="sectnext">Back</button>
+          <button id="back-btn" class="button-text" (click)="back2()" *ngIf="lasttnext">Back</button>
+        </div>
+        <div class="col-md-12">
+          <ul class="list-group">
+            <li class="list-item col-xs-4" id="col1">1. Basic Details</li>
+            <li class="list-item col-xs-4" id="col2">2. General Details</li>
+            <li class="list-item col-xs-4" id="col3">3. Document Section</li>
+          </ul>
+        </div>
+        <form style="padding: 17px;" [formGroup]="qualityForm">
+          <!-- Basic details -->
+          <ng-container *ngIf="firstnext">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Report Number</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="rpnumber">
+                  <small *ngIf="!qualityForm.controls.rpnumber.valid && qualityForm.controls.rpnumber.touched"
+                    class="text-danger">Report Number is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Report Classification</label>
+                  <select class="form-control" formControlName="rpclassificaiton">
+                    <option value="null" selected>Select Report Classification</option>
+                    <option value="test">Test</option>
+                    <option value="testing">Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.rpclassificaiton.valid && qualityForm.controls.rpclassificaiton.touched"
+                    class="text-danger">Report Classification is required</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Action Taken</label>
+                  <select class="form-control" formControlName="actiontoken">
+                    <option value="null" selected>Select Action Taken</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.actiontoken.valid && qualityForm.controls.actiontoken.touched"
+                  class="text-danger">Action Taken is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Problem Classification</label>
+                  <select class="form-control" formControlName="pmclassification">
+                    <option value="null" selected>Select Problem Classification</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.pmclassification.valid && qualityForm.controls.pmclassification.touched"
+                  class="text-danger">Problem Classification is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Priority</label>
+                  <select class="form-control" formControlName="priority">
+                    <option value="null" selected>Select Priority</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.priority.valid && qualityForm.controls.priority.touched"
+                  class="text-danger">Priority is required</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="col-sm-6 col-md-6 col-lg-6 nopadding-left">
+                <button id="next-butn" class="button-text" (click)="next1()">Next</button>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- General Details -->
+
+          <ng-container *ngIf="sectnext">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Claim Code</label>
+                  <select class="form-control" style="width:94%" formControlName="claimcode">
+                    <option value="null" selected>Select Claim Code</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <img class="i-icon" src="assets/images/information-symbol.png">
+                  <small *ngIf="!qualityForm.controls.claimcode.valid && qualityForm.controls.claimcode.touched"
+                  class="text-danger">Claim Code is required</small>
+                </div>
+
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Parts No</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="partno">
+                  <small *ngIf="!qualityForm.controls.partno.valid && qualityForm.controls.partno.touched"
+                  class="text-danger">Parts No is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Sub Part Number</label>
+                  <select class="form-control" formControlName="subpartno">
+                    <option value="null" selected>Select Part Number</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.subpartno.valid && qualityForm.controls.subpartno.touched"
+                  class="text-danger">Sub Part Number is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Parts Name</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="partname">
+                  <small *ngIf="!qualityForm.controls.partname.valid && qualityForm.controls.partname.touched"
+                  class="text-danger">Parts Name is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Date</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="date">
+                  <small *ngIf="!qualityForm.controls.partname.valid && qualityForm.controls.partname.touched"
+                  class="text-danger">Date is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Quantity</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="quality">
+                  <small *ngIf="!qualityForm.controls.quality.valid && qualityForm.controls.quality.touched"
+                  class="text-danger">Quantity is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Containment Aciton</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="cmaction">
+                  <small *ngIf="!qualityForm.controls.cmaction.valid && qualityForm.controls.cmaction.touched"
+                  class="text-danger">Containment Aciton is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Where</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="where">
+                  <small *ngIf="!qualityForm.controls.cmaction.valid && qualityForm.controls.cmaction.touched"
+                  class="text-danger">Containment Aciton is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Which Stage</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="whichstage">
+                  <small *ngIf="!qualityForm.controls.whichstage.valid && qualityForm.controls.whichstage.touched"
+                  class="text-danger">Which Stage is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Problem</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="problem">
+                  <small *ngIf="!qualityForm.controls.problem.valid && qualityForm.controls.problem.touched"
+                  class="text-danger">Problem is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Possible Cause</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="pscase">
+                  <small *ngIf="!qualityForm.controls.pscase.valid && qualityForm.controls.pscase.touched"
+                  class="text-danger">Possible Cause is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Judgement</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="judgement">
+                  <small *ngIf="!qualityForm.controls.judgement.valid && qualityForm.controls.judgement.touched"
+                  class="text-danger">Judgement is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="lable">Note</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="note">
+                  <small *ngIf="!qualityForm.controls.note.valid && qualityForm.controls.note.touched"
+                  class="text-danger">Note is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Reference Type</label>
+                  <select class="form-control" formControlName="reftype">
+                    <option value="null" selected>Select Reference Type</option>
+                    <option>Test</option>
+                    <option>Testing</option>
+                  </select>
+                  <small *ngIf="!qualityForm.controls.reftype.valid && qualityForm.controls.reftype.touched"
+                  class="text-danger">Reference Type is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Reference No</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="refno">
+                  <small *ngIf="!qualityForm.controls.refno.valid && qualityForm.controls.refno.touched"
+                  class="text-danger">Reference Type is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Description</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="description">
+                  <small *ngIf="!qualityForm.controls.description.valid && qualityForm.controls.description.touched"
+                  class="text-danger">Description is required</small>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <label class="lable">Remarks</label>
+                  <input type="text" class="form-control" placeholder="" formControlName="remarks">
+                  <small *ngIf="!qualityForm.controls.remarks.valid && qualityForm.controls.remarks.touched"
+                  class="text-danger">Remarks is required</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="background lable"><span>Sub Part Details</span></h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="padding: 0px 8px;">
+                <table class="table resposive">
+                  <thead>
+                    <tr>
+                      <th>
+                        <label class="lable">Sub Part No</label>
+                      </th>
+                      <th>
+                        <label class="lable">Sub Part Name</label>
+                      </th>
+                      <th>
+                        <label class="lable">Quantity</label>
+                      </th>
+                      <th>
+                        <label class="lable">Description</label>
+                      </th>
+                    </tr>
+                  </thead>
+                  <ng-container formArrayName="subpartdetailsForm" *ngFor="let part of subpartdetailsdetails.controls;let i=index">
+                    <ng-container  [formGroupName]="i">
+                        <tr>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="" formControlName="subpartno">
+                              </div>
+                            </td>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="" formControlName="subpartname">
+                              </div>
+                            </td>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="" formControlName="quality">
+                              </div>
+                            </td>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="" formControlName="description">
+                              </div>
+                            </td>
+                            <td style="text-align: end;" colspan="4" (click)="deleteRow(i)" *ngIf="i>0"
+                              style="cursor: pointer;padding: 8px 0px 0px 0px !important;">X</td>
+                          </tr>
+                          <tr>
+                            <td>
+                                <small *ngIf="!part.controls.subpartno.valid && part.controls.subpartno.touched"
+                                class="text-danger">Sub Part No is required</small>
+                            </td>
+                            <td>
+                                <small *ngIf="!part.controls.subpartname.valid && part.controls.subpartname.touched"
+                                class="text-danger">Sub Part Name is required</small>
+                            </td>
+                            <td>
+                                <small *ngIf="!part.controls.quality.valid && part.controls.quality.touched"
+                                class="text-danger">Quantity is required</small>
+                            </td>
+                            <td>
+                                <small *ngIf="!part.controls.description.valid && part.controls.description.touched"
+                                class="text-danger">Description is required</small>
+                            </td>
+                            <td></td>
+                          </tr>
+                    </ng-container>
+                    
+                  </ng-container>
+                  <tr>
+                    <td class="tdaddrow" colspan="4"><span class="addrow" (click)="addRow()">Add Row</span></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-sm-6 col-md-6 col-lg-6 nopadding-left">
+                  <button id="next-butn" class="button-text" (click)="next2()">Next</button>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+
+          <!-- Document Section -->
+
+          <ng-container *ngIf="lasttnext">
+            <div class="col-md-6">
+              <h2 class="head" style="font-size: 20px;">Upload Files</h2>
+
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{filename}} <span class="cacelfilname" *ngIf="filename != ''" (click)="cancleUpload()">X</span></h5>
+                  <section class="fileupload-bg">
+                      <label for="uploadFile" class="btn btn-sm upload-btn cursor">
+                          <span class="card-subtitle mb-2 text-muted">Add more files</span></label>
+                         <input type="file" id="uploadFile" #uploadFile style="display: none" (change)="uploadfile($event)"
+                           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-12">
+              <div class="col-sm-6 col-md-6 col-lg-6 nopadding-left">
+                <button id="next-butn" class="button-text">Sumbit</button>
+              </div>
+            </div>
+          </ng-container>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+
+  </div>
+
+</div>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CKD</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  
+  <script>
+    var babelHelpers = {};
+  </script>
+</head>
+
+<body class="loading">
+  <main>
+      <app-root>
+        
+          
+        </app-root>
+  </main>
+
+</body>
+<script>
+$("#tile-1 .nav-tabs a").click(function() {
+  var position = $(this).parent().position();
+  var width = $(this).parent().width();
+    $("#tile-1 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = $("#tile-1 .nav-tabs").find(".active").parent("li").width();
+var actPosition = $("#tile-1 .nav-tabs .active").position();
+$("#tile-1 .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+</script>
+
+<script>
+
+</script>
+</html>

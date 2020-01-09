@@ -1,0 +1,42 @@
+<div class="nav-side-menu">
+  <div class="brand"><img class="img-responsive" src="assets/images/sidebar-img.png" alt=""></div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+      <div class="menu-list">
+
+          <ul id="menu-content" class="menu-content collapse out">
+              <li routerLinkActive="active" class="collapsed">
+                <a>
+                <img class="sidebar-img" src="assets/images/change-management.png">Change Management
+                </a>
+              </li>
+
+              <li routerLinkActive="active" data-toggle="collapse" data-target="#products" class="collapsed">
+                <a><img class="sidebar-img" src="assets/images/download.png">Process Description<span class="arrow"></span></a>
+              </li>
+              <ul class="sub-menu collapse" id="products" style="background: #000;">
+                  <li><a>Picture Catalogue</a></li>
+                  <li><a>Lot Information</a></li>
+                  <!-- <li><a>Buttons</a></li>
+                  <li><a>Tabs & Accordions</a></li>
+                  <li><a>Typography</a></li>
+                  <li><a>FontAwesome</a></li>
+                  <li><a>Slider</a></li>
+                  <li><a>Panels</a></li>
+                  <li><a>Widgets</a></li>
+                  <li><a>Bootstrap Model</a></li> -->
+              </ul>
+               <li routerLinkActive="active" class="collapsed">
+                <a>
+                  <img class="sidebar-img" src="assets/images/claim.png">Monetary Claim
+                </a>
+                </li>
+
+               <li routerLinkActive="active" class="collapsed" routerLink="quality">
+                <a>
+                  <img class="sidebar-img" src="assets/images/search.png">Quality 
+                </a>
+              </li>
+          </ul>
+   </div>
+</div>

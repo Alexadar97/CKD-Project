@@ -1,0 +1,16 @@
+.navbar-bg-img{
+    background-image: url(/assets/images/innerpagetopbg.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    height: 67px;
+}
+.admin-round {
+    position: absolute;
+    right: 33px;
+    top: 17px;
+    background-color: #161D21;
+    color: #fff;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+}

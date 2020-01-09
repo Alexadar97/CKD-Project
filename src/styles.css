@@ -1,0 +1,55 @@
+@font-face {
+  font-family: corpoS-bold;
+  src: url("/assets/fonts/corpoS-bold.ttf");
+}
+@font-face {
+    font-family: corpoS-italic;
+    src: url("/assets/fonts/corpoS-italic.ttf");
+  }
+  @font-face {
+    font-family: corpoS-normal;
+    src: url("/assets/fonts/corpoS-normal.ttf");
+  }
+  .nopadding{
+    padding: 0% !important;
+  }
+  .nopadding-left{
+    padding-left: 0% !important;
+  }
+    .nopadding-right{
+    padding-right: 0% !important;
+  } 
+   .nopadding-top{
+    padding-top: 0% !important;
+  }
+  .nopadding-bottom{
+    padding-bottom: 0% !important;
+  } 
+  h2.head{
+   color: #161616;
+   font-size: 25px;	
+   line-height: 29px;
+  }
+body{
+  background-color: #F4F4F4 !important;
+}
+.card{
+  box-sizing: border-box;
+  border: 1px solid #E6E6E6;	
+  border-radius: 4px;	
+  background-color: #FFFFFF;	
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.1);
+}
+.form-control{
+  box-sizing: border-box;
+  border: 1px solid #DCDCDC;	
+  border-radius: 4px;	
+  background-color: #FFFFFF;
+}
+label.lable {
+  color: #242536;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+}
+

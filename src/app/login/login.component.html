@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 bg-img">
+      <div class="img-text">
+        <span class="ckdrequest">CKD Request <br> Management</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+          <div class="Bitmap" >
+              <img class="img-responsive" src="assets/images/Bitmap.png">
+              <h1 class="sign-in">Sign in</h1>
+              <p class="use-your-login-crede">Use your login credentials to signin</p>
+            </div>
+      </div>
+      <div class="col-md-12">
+          <div class="container nopadding">
+            <section class="tab-bg">
+                <input type="radio" name="radio" class="radioInput" id="tab1" checked hidden/>
+                <input type="radio" name="radio" class="radioInput" id="tab2" hidden/>
+                
+                <div class="tabHeader-container">
+                  <label for="tab1" class="tabHeader" (click)="interexternal('External')">
+                    <span id="Extab1">External Login</span> 
+                  </label>
+                  <!-- <span class="activeTab-indicator"></span> -->
+                  <label for="tab2" class="tabHeader" (click)="interexternal('Internal')">
+                    <span id="Intab2">Internal Login</span>
+                  </label>
+                  <!-- <span class="activeTab-indicator"></span> -->
+                </div>
+                
+                <!-- <span class="activeTab-indicator"></span> -->
+                
+                <div class="">
+                  <form [formGroup]="ExternalloginForm">
+                  <div class="tabContent tab1-content" *ngIf="external">
+                        <div class="form-grup">
+                            <label class="pure-material-textfield-outlined">
+                                <input placeholder=" " formControlName="name">
+                                <span>Email</span>
+                              </label>
+                              <small *ngIf="!ExternalloginForm.controls.name.valid && ExternalloginForm.controls.name.touched"
+                              class="text-danger">Please Enter Your Email Address </small>
+                        </div>
+                        <div class="form-grup">
+                        <label class="pure-material-textfield-outlined">
+                            <input type="password" placeholder=" " formControlName="password">
+                            <span>Password</span>
+                          </label>
+                          <small *ngIf="!ExternalloginForm.controls.password.valid && ExternalloginForm.controls.password.touched"
+                          class="text-danger">Please Enter Your Password </small>
+                        </div>
+                         <div class="col-md-12 nopadding">
+                    <button class="button-text" (click)="externallogin('external')">SIGN IN NOW</button>
+                 </div>
+                  </div>
+                </form>
+                <form [formGroup]="InternalloginForm">
+                  <div class="tabContent tab2-content" *ngIf="internal">
+                      <div class="form-grup">
+                          <label class="pure-material-textfield-outlined">
+                              <input placeholder=" " formControlName="shortid">
+                              <span>Short ID</span>
+                            </label>
+                            <small *ngIf="!InternalloginForm.controls.shortid.valid && InternalloginForm.controls.shortid.touched"
+              class="text-danger">Please Enter Your Short ID </small>
+                      </div>
+                      <div class="form-grup">
+                      <label class="pure-material-textfield-outlined">
+                          <input type="password" placeholder=" " formControlName="password">
+                          <span>Password</span>
+                        </label>
+                        <small *ngIf="!InternalloginForm.controls.password.valid && InternalloginForm.controls.password.touched"
+                        class="text-danger">Please Enter Your Password</small>
+                      </div>
+                      <div class="col-md-12 nopadding">
+                          <button class="button-text" (click)="externallogin('internal')">SIGN IN NOW</button>
+                       </div>
+                  </div>
+                </form>
+                </div>
+               
+            </section>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
